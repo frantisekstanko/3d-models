@@ -35,6 +35,7 @@ flashlightMountLength  = _handlebarDiameter  + wallThickness*2;
 _flashlightPosition    = flashlightPosition + explosion;
 _binding_tape_diameter = handlebarDiameter + binding_tape_thickness + wallThickness * 3; // TO CHECK
 _binding_tape_offset   = 6; // TODO
+_cube_decrease_by      = 5; // TODO
 
 render();
 
@@ -119,9 +120,9 @@ module mount(innerDiameter, wallThickness, mountLength, mountSize, screwHoleSize
     translate([
         outerDiameter/2 - wallThickness,
         -mountLength/2,
-        -innerDiameter/2
+        -innerDiameter/2 + _cube_decrease_by
     ])
-    cube([wallThickness,mountLength,innerDiameter/2]);
+    cube([wallThickness,mountLength,innerDiameter/2-_cube_decrease_by]);
     // <<<
 }
 
