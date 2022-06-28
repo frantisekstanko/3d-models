@@ -14,7 +14,7 @@ flashlightLength   = 123; // mm
 flashlightPosition         =  41; // mm ; the distance between the mount and the flashlight
 wallThickness              =   5; // mm ; very low value may cause bug of rounded cube
 interconnectMountThickness =   6; // mm
-handlebarsMountLength      =  23; // mm
+handlebarsMountLength      =  20; // mm
 screwHoleDiameter          = 5.4; // mm
 screwMountLength           =  14; // mm ; very low  value may cause bug of rounded cube
 screwMountRadius           =   3; // mm ; very high value may cause bug of rounded cube
@@ -34,7 +34,7 @@ flashlightMountLength  = _handlebarDiameter  + wallThickness*2 + 12; // TODO
 _flashlightPosition    = flashlightPosition + explosion;
 _handlebar_binding_tape_diameter  = _handlebarDiameter  + wallThickness*2;
 _flashlight_binding_tape_diameter = _flashlightDiameter + wallThickness;
-_handlebar_binding_tape_offset   = 6; // TODO
+_handlebar_binding_tape_offset   = 5; // TODO
 _flashlight_binding_tape_offset   = 19; // TODO
 
 // rotate([0,90,0])
