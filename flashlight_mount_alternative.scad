@@ -5,10 +5,10 @@ $fn       = 64; // increasing this value increases quality
 explosion = 0;  // mm ; explode parts by this distance
 
 // measured values
-gasketThickness    =   3.95; // mm
-handlebarDiameter  =  32.00; // mm
-flashlightDiameter =  26.45; // mm // 24.1 ?
-flashlightLength   = 123.00; // mm
+gasketThickness    =   4; // mm
+handlebarDiameter  =  32; // mm
+flashlightDiameter =  25; // mm // 24.1 ?
+flashlightLength   = 123; // mm
 
 // desired properties
 flashlightPosition         =  41; // mm ; the distance between the mount and the flashlight
@@ -30,15 +30,12 @@ _handlebarLength       = 800;
 _handlebarDiameter     = handlebarDiameter  + gasketThickness;
 _flashlightDiameter    = flashlightDiameter + gasketThickness;
 _renderingFix          = 1;
-_screwMountLength      = screwMountLength + wallThickness;
-screwCircleDiameter    = _flashlightDiameter + _screwMountLength + screwHoleDiameter + wallThickness;
 flashlightMountLength  = _handlebarDiameter  + wallThickness*2 + 12; // TODO
 _flashlightPosition    = flashlightPosition + explosion;
 _handlebar_binding_tape_diameter  = _handlebarDiameter  + wallThickness*2;
 _flashlight_binding_tape_diameter = _flashlightDiameter + wallThickness;
 _handlebar_binding_tape_offset   = 6; // TODO
 _flashlight_binding_tape_offset   = 19; // TODO
-_cube_decrease_by      = 5; // TODO
 
 // rotate([0,90,0])
 render();
@@ -66,8 +63,8 @@ module render(){
     }
 
     // do not print this
-    // # handlebar();
-    // # translate([0,0,_flashlightPosition]) flashlight(_flashlightDiameter);
+    # handlebar();
+    # translate([0,0,_flashlightPosition]) flashlight(_flashlightDiameter);
 }
 
 module binding_tape(diameter){
@@ -101,7 +98,7 @@ module flashlight(innerDiameter){
 
 module interconnect(){
     // middle part
-    middlePartBase   = interconnectMountThickness - interconnectMountThickness + explosion/2;
+    middlePartBase   = interconnectMountThickness - interconnectMountThickness + explosion/2 + 5; // TODO
     middlePartTop    = _flashlightPosition - _flashlightDiameter/2 - interconnectMountThickness;
     middlePartHeight = middlePartTop - middlePartBase - explosion/2 + interconnectMountThickness + _flashlightDiameter/2;
     translate([
