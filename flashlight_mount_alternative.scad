@@ -14,13 +14,16 @@ flashlightLength   = 125; // mm
 horizontalWallThickness           =   2; // mm ;
 verticalWallThickness             =   1; // mm ;
 X_handlebarsMountLength           =  20; // mm
-Z_flashlightPosition              =  37; // mm ; the distance between the mount and the flashlight
+Z_flashlightPosition              =  38; // mm ; the distance between the mount and the flashlight
 binding_tape_width                =   5; // mm
 binding_tape_thickness            =   2;
 flashlight_rotation               =   0; // degrees. values [ 0 - 15 ] should be sane enough
+
 bottomOffsetFromHandlerbarsCenter =   5;
-topOffsetFromFlashlightCenter     =   5;
 flashlightMountPadding = 0;
+
+topOffsetFromFlashlightCenter     =   5;
+
 
 //////////////////////////////////////////////////////////
 // there is no need to touch any of the following lines //
@@ -48,11 +51,11 @@ else if (show=="print"){
 module render(){
     printable();
 
-    color("#222222")
+    color("#444")
     handlebar();
 
-    // color("#888888")
-    // flashlight(_flashlightDiameter);
+    color("#888888")
+    flashlight(_flashlightDiameter);
 }
 
 module printable(){
