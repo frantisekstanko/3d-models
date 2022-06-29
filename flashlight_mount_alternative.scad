@@ -6,14 +6,14 @@ show      = "print"; // [ "preview" | "print" ]
 
 // measured values
 gasketThickness    =   4; // mm
-handlebarDiameter  =  32; // mm
+mountDiameter      =  32; // mm
 flashlightDiameter =  25; // mm
 flashlightLength   = 125; // mm
 
 // desired properties
 horizontalWallThickness           =   2; // mm ;
 verticalWallThickness             =   1; // mm ;
-X_handlebarsMountLength           =  20; // mm
+X_mountLength                     =  20; // mm
 Z_flashlightPosition              =  38; // mm ; the distance between the mount and the flashlight
 binding_tape_width                =   5; // mm
 binding_tape_thickness            =   2;
@@ -31,14 +31,14 @@ topOffsetFromFlashlightCenter     =   5;
 //////////////////////////////////////////////////////////
 
 _handlebarLength       = 800;
-_handlebarDiameter     = handlebarDiameter  + gasketThickness;
+_mountDiameter     = mountDiameter  + gasketThickness;
 _flashlightDiameter    = flashlightDiameter + gasketThickness;
 _renderingFix          = 1;
-flashlightMountLength  = _handlebarDiameter + flashlightMountPadding;
+flashlightMountLength  = _mountDiameter + flashlightMountPadding;
 _Z_flashlightPosition    = Z_flashlightPosition;
-_handlebar_binding_tape_diameter  = _handlebarDiameter  + horizontalWallThickness*2;
+_handlebar_binding_tape_diameter  = _mountDiameter  + horizontalWallThickness*2;
 _flashlight_binding_tape_diameter = _flashlightDiameter + horizontalWallThickness*2;
-_handlebar_binding_tape_offset    = X_handlebarsMountLength/2 - binding_tape_width/2 - verticalWallThickness*2; // TO CHECK
+_handlebar_binding_tape_offset    = X_mountLength/2 - binding_tape_width/2 - verticalWallThickness*2; // TO CHECK
 _flashlight_binding_tape_offset   = flashlightMountLength/2 - binding_tape_width/2 - verticalWallThickness*2 - binding_tape_rotation_corr; // TO CHECK
 
 if (show=="preview"){
@@ -106,7 +106,7 @@ module binding_tape(diameter){
 module handlebar(){
     translate([-_handlebarLength/2,0,0])
     rotate([0,90,0])
-    cylinder(h=_handlebarLength, r1=_handlebarDiameter/2, r2=_handlebarDiameter/2);
+    cylinder(h=_handlebarLength, r1=_mountDiameter/2, r2=_mountDiameter/2);
 }
 
 module flashlight(innerDiameter){
@@ -119,12 +119,12 @@ module interconnect(){
     middlePartTop    = _Z_flashlightPosition - _flashlightDiameter/2 - topOffsetFromFlashlightCenter;
     middlePartHeight = middlePartTop - bottomOffsetFromHandlerbarsCenter + _flashlightDiameter/2;
     translate([
-        -X_handlebarsMountLength/2,
+        -X_mountLength/2,
         -flashlightMountLength/2,
         bottomOffsetFromHandlerbarsCenter
     ])
     cube([
-        X_handlebarsMountLength,
+        X_mountLength,
         flashlightMountLength,
         middlePartHeight
     ]);
