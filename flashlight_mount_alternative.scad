@@ -19,7 +19,7 @@ binding_tape_thickness            =   3;
 flashlight_rotation               =   0; // degrees. values [ 0 - 15 ] should be sane enough
 bottomOffsetFromHandlerbarsCenter =   5;
 topOffsetFromFlashlightCenter     =   5;
-flashlightMountPadding = 10;
+flashlightMountPadding = 0;
 
 //////////////////////////////////////////////////////////
 // there is no need to touch any of the following lines //
@@ -29,12 +29,12 @@ _handlebarLength       = 800;
 _handlebarDiameter     = handlebarDiameter  + gasketThickness;
 _flashlightDiameter    = flashlightDiameter + gasketThickness;
 _renderingFix          = 1;
-flashlightMountLength  = _handlebarDiameter  + wallThickness*2 + flashlightMountPadding;
+flashlightMountLength  = _handlebarDiameter + flashlightMountPadding;
 _Z_flashlightPosition    = Z_flashlightPosition;
 _handlebar_binding_tape_diameter  = _handlebarDiameter  + wallThickness*2;
 _flashlight_binding_tape_diameter = _flashlightDiameter + wallThickness*2;
-_handlebar_binding_tape_offset   = 5; // TODO
-_flashlight_binding_tape_offset   = 19; // TODO
+_handlebar_binding_tape_offset    = 5; // TODO
+_flashlight_binding_tape_offset   = flashlightMountLength/2 - binding_tape_width/2 - wallThickness; // TODO
 
 if (show=="preview"){
     render();
