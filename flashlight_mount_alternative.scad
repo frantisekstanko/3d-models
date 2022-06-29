@@ -17,7 +17,8 @@ Z_flashlightPosition       =  41; // mm ; the distance between the mount and the
 binding_tape_width         =   5; // mm
 binding_tape_thickness     =   3;
 flashlight_rotation        =   0; // degrees. values [ 0 - 15 ] should be sane enough
-bottomOffsetFromHandlerbarsCenter = 0;
+bottomOffsetFromHandlerbarsCenter = 5;
+topOffsetFromFlashlightCenter = 0;
 
 //////////////////////////////////////////////////////////
 // there is no need to touch any of the following lines //
@@ -109,7 +110,7 @@ module flashlight(innerDiameter){
 }
 
 module interconnect(){
-    middlePartTop    = _Z_flashlightPosition - _flashlightDiameter/2;
+    middlePartTop    = _Z_flashlightPosition - _flashlightDiameter/2 - topOffsetFromFlashlightCenter;
     middlePartHeight = middlePartTop - bottomOffsetFromHandlerbarsCenter + _flashlightDiameter/2;
     translate([
         -X_handlebarsMountLength/2,
