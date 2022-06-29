@@ -13,12 +13,13 @@ flashlightLength   = 125; // mm
 // desired properties
 wallThickness                     =   3; // mm ; very low value may cause bug of rounded cube
 X_handlebarsMountLength           =  20; // mm
-Z_flashlightPosition              =  41; // mm ; the distance between the mount and the flashlight
+Z_flashlightPosition              =  40; // mm ; the distance between the mount and the flashlight
 binding_tape_width                =   5; // mm
 binding_tape_thickness            =   3;
 flashlight_rotation               =   0; // degrees. values [ 0 - 15 ] should be sane enough
-bottomOffsetFromHandlerbarsCenter = 5;
-topOffsetFromFlashlightCenter     = 5;
+bottomOffsetFromHandlerbarsCenter =   5;
+topOffsetFromFlashlightCenter     =   5;
+flashlightMountPadding = 10;
 
 //////////////////////////////////////////////////////////
 // there is no need to touch any of the following lines //
@@ -28,7 +29,7 @@ _handlebarLength       = 800;
 _handlebarDiameter     = handlebarDiameter  + gasketThickness;
 _flashlightDiameter    = flashlightDiameter + gasketThickness;
 _renderingFix          = 1;
-flashlightMountLength  = _handlebarDiameter  + wallThickness*2 + 12; // TODO
+flashlightMountLength  = _handlebarDiameter  + wallThickness*2 + flashlightMountPadding;
 _Z_flashlightPosition    = Z_flashlightPosition;
 _handlebar_binding_tape_diameter  = _handlebarDiameter  + wallThickness*2;
 _flashlight_binding_tape_diameter = _flashlightDiameter + wallThickness*2;
@@ -49,8 +50,8 @@ module render(){
     color("#222222")
     handlebar();
 
-    // color("#888888")
-    // flashlight(_flashlightDiameter);
+    color("#888888")
+    flashlight(_flashlightDiameter);
 }
 
 module printable(){
