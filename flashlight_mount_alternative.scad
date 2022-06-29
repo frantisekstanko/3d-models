@@ -17,21 +17,20 @@ flashlight_rotation           =  0;
 X_mountLength                 = 20;
 flashlightMountPadding        =  0;
 topOffsetFromFlashlightCenter =  0;
-Z_flashlightPosition          = 38;
 
 // rear light
 // flashlight_rotation           = 14;
 // X_mountLength                 = 32;
 // flashlightMountPadding        = 10;
 // topOffsetFromFlashlightCenter =  8;
-// Z_flashlightPosition          = 35;
 
-horizontalWallThickness           =   2; // mm ;
-verticalWallThickness             =   1; // mm ;
-binding_tape_width                =   5; // mm
-binding_tape_thickness            =   2;
-binding_tape_rotation_corr        =   flashlight_rotation/4;
-bottomOffsetFromHandlerbarsCenter =   5;
+Z_flashlightPosition              = 38;
+horizontalWallThickness           =  2; // mm ;
+verticalWallThickness             =  1; // mm ;
+binding_tape_width                =  5; // mm
+binding_tape_thickness            =  2;
+binding_tape_rotation_corr        =  flashlight_rotation/4;
+bottomOffsetFromHandlerbarsCenter =  5;
 
 
 //////////////////////////////////////////////////////////
