@@ -1,8 +1,8 @@
 include <vendor/roundedcube.scad>;
 
 // rendering
-$fn       = 128; // increasing this value increases quality
-show      = "preview"; // [ "preview" | "print" ]
+$fn       = 256; // increasing this value increases quality
+show      = "print"; // [ "preview" | "print" ]
 
 // measured values
 gasketThickness    =   4; // mm
