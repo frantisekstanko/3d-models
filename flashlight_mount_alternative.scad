@@ -11,13 +11,13 @@ flashlightDiameter =  25; // mm
 flashlightLength   = 125; // mm
 
 // desired properties
-wallThickness              =   5; // mm ; very low value may cause bug of rounded cube
+wallThickness              =   3; // mm ; very low value may cause bug of rounded cube
 X_handlebarsMountLength    =  20; // mm
 Z_flashlightPosition       =  41; // mm ; the distance between the mount and the flashlight
 binding_tape_width         =   5; // mm
 binding_tape_thickness     =   3;
 flashlight_rotation        =   0; // degrees. values [ 0 - 15 ] should be sane enough
-bottomOffsetFromHandlerbarsCenter = 5;
+bottomOffsetFromHandlerbarsCenter = 0;
 
 //////////////////////////////////////////////////////////
 // there is no need to touch any of the following lines //
@@ -30,7 +30,7 @@ _renderingFix          = 1;
 flashlightMountLength  = _handlebarDiameter  + wallThickness*2 + 12; // TODO
 _Z_flashlightPosition    = Z_flashlightPosition;
 _handlebar_binding_tape_diameter  = _handlebarDiameter  + wallThickness*2;
-_flashlight_binding_tape_diameter = _flashlightDiameter + wallThickness;
+_flashlight_binding_tape_diameter = _flashlightDiameter + wallThickness*2;
 _handlebar_binding_tape_offset   = 5; // TODO
 _flashlight_binding_tape_offset   = 19; // TODO
 
