@@ -1,23 +1,19 @@
 include <vendor/roundedcube.scad>;
 
 // rendering
-$fn       = 64; // increasing this value increases quality
-explosion = 0;  // mm ; explode parts by this distance
+$fn       = 128; // increasing this value increases quality
+show      = "preview"; // [ "preview" | "print" ]
 
 // measured values
 gasketThickness    =   4; // mm
 handlebarDiameter  =  32; // mm
-flashlightDiameter =  25; // mm // 24.1 ?
-flashlightLength   = 123; // mm
+flashlightDiameter =  25; // mm
+flashlightLength   = 125; // mm
 
 // desired properties
 flashlightPosition         =  41; // mm ; the distance between the mount and the flashlight
 wallThickness              =   5; // mm ; very low value may cause bug of rounded cube
-interconnectMountThickness =   6; // mm
 handlebarsMountLength      =  20; // mm
-screwHoleDiameter          = 5.4; // mm
-screwMountLength           =  14; // mm ; very low  value may cause bug of rounded cube
-screwMountRadius           =   3; // mm ; very high value may cause bug of rounded cube
 binding_tape_width         =   5; // mm
 binding_tape_thickness     =   3;
 flashlight_rotation        =   0; // degrees. values [ 0 - 15 ] should be sane enough
@@ -31,16 +27,32 @@ _handlebarDiameter     = handlebarDiameter  + gasketThickness;
 _flashlightDiameter    = flashlightDiameter + gasketThickness;
 _renderingFix          = 1;
 flashlightMountLength  = _handlebarDiameter  + wallThickness*2 + 12; // TODO
-_flashlightPosition    = flashlightPosition + explosion;
+_flashlightPosition    = flashlightPosition;
 _handlebar_binding_tape_diameter  = _handlebarDiameter  + wallThickness*2;
 _flashlight_binding_tape_diameter = _flashlightDiameter + wallThickness;
 _handlebar_binding_tape_offset   = 5; // TODO
 _flashlight_binding_tape_offset   = 19; // TODO
 
-// rotate([0,90,0])
-render();
+if (show=="preview"){
+    render();
+}
+else if (show=="print"){
+    rotate([0,90,0])
+    printable();
+}
 
 module render(){
+    printable();
+
+    color("#222222")
+    handlebar();
+
+    translate([0,0,_flashlightPosition])
+    color("#888888")
+    flashlight(_flashlightDiameter);
+}
+
+module printable(){
     difference(){
         interconnect();
         handlebar();
@@ -61,10 +73,6 @@ module render(){
             binding_tape(_flashlight_binding_tape_diameter);
         }
     }
-
-    // do not print this
-    # handlebar();
-    # translate([0,0,_flashlightPosition]) flashlight(_flashlightDiameter);
 }
 
 module binding_tape(diameter){
@@ -98,9 +106,9 @@ module flashlight(innerDiameter){
 
 module interconnect(){
     // middle part
-    middlePartBase   = interconnectMountThickness - interconnectMountThickness + explosion/2 + 5; // TODO
-    middlePartTop    = _flashlightPosition - _flashlightDiameter/2 - interconnectMountThickness;
-    middlePartHeight = middlePartTop - middlePartBase - explosion/2 + interconnectMountThickness + _flashlightDiameter/2;
+    middlePartBase   = + 5; // TODO
+    middlePartTop    = _flashlightPosition - _flashlightDiameter/2 ;
+    middlePartHeight = middlePartTop - middlePartBase + _flashlightDiameter/2;
     translate([
         -handlebarsMountLength/2,
         -flashlightMountLength/2,
