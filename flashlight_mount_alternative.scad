@@ -47,7 +47,6 @@ module render(){
     color("#222222")
     handlebar();
 
-    translate([0,0,_flashlightPosition])
     color("#888888")
     flashlight(_flashlightDiameter);
 }
@@ -100,6 +99,7 @@ module handlebar(){
 }
 
 module flashlight(innerDiameter){
+    translate([0,0,_flashlightPosition])
     rotate([90,0,flashlight_rotation])
     cylinder(h=flashlightLength, r1=innerDiameter/2, r2=innerDiameter/2, center=true);
 }
