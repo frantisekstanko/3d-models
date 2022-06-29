@@ -18,6 +18,7 @@ Z_flashlightPosition              =  38; // mm ; the distance between the mount 
 binding_tape_width                =   5; // mm
 binding_tape_thickness            =   2;
 flashlight_rotation               =   0; // degrees. values [ 0 - 15 ] should be sane enough
+binding_tape_rotation_corr        =   flashlight_rotation/4;
 
 bottomOffsetFromHandlerbarsCenter =   5;
 flashlightMountPadding = 0;
@@ -38,7 +39,7 @@ _Z_flashlightPosition    = Z_flashlightPosition;
 _handlebar_binding_tape_diameter  = _handlebarDiameter  + horizontalWallThickness*2;
 _flashlight_binding_tape_diameter = _flashlightDiameter + horizontalWallThickness*2;
 _handlebar_binding_tape_offset    = X_handlebarsMountLength/2 - binding_tape_width/2 - verticalWallThickness*2; // TO CHECK
-_flashlight_binding_tape_offset   = flashlightMountLength/2 - binding_tape_width/2 - verticalWallThickness*2; // TO CHECK
+_flashlight_binding_tape_offset   = flashlightMountLength/2 - binding_tape_width/2 - verticalWallThickness*2 - binding_tape_rotation_corr; // TO CHECK
 
 if (show=="preview"){
     render();
