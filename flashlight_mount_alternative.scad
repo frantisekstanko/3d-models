@@ -11,11 +11,12 @@ flashlightDiameter =  25; // mm
 flashlightLength   = 125; // mm
 
 // desired properties
-wallThickness                     =   3; // mm ; very low value may cause bug of rounded cube
+horizontalWallThickness           =   2; // mm ;
+verticalWallThickness             =   1; // mm ;
 X_handlebarsMountLength           =  20; // mm
-Z_flashlightPosition              =  40; // mm ; the distance between the mount and the flashlight
+Z_flashlightPosition              =  37; // mm ; the distance between the mount and the flashlight
 binding_tape_width                =   5; // mm
-binding_tape_thickness            =   3;
+binding_tape_thickness            =   2;
 flashlight_rotation               =   0; // degrees. values [ 0 - 15 ] should be sane enough
 bottomOffsetFromHandlerbarsCenter =   5;
 topOffsetFromFlashlightCenter     =   5;
@@ -31,10 +32,10 @@ _flashlightDiameter    = flashlightDiameter + gasketThickness;
 _renderingFix          = 1;
 flashlightMountLength  = _handlebarDiameter + flashlightMountPadding;
 _Z_flashlightPosition    = Z_flashlightPosition;
-_handlebar_binding_tape_diameter  = _handlebarDiameter  + wallThickness*2;
-_flashlight_binding_tape_diameter = _flashlightDiameter + wallThickness*2;
-_handlebar_binding_tape_offset    = 5; // TODO
-_flashlight_binding_tape_offset   = flashlightMountLength/2 - binding_tape_width/2 - wallThickness; // TODO
+_handlebar_binding_tape_diameter  = _handlebarDiameter  + horizontalWallThickness*2;
+_flashlight_binding_tape_diameter = _flashlightDiameter + horizontalWallThickness*2;
+_handlebar_binding_tape_offset    = X_handlebarsMountLength/2 - binding_tape_width/2 - verticalWallThickness*2; // TO CHECK
+_flashlight_binding_tape_offset   = flashlightMountLength/2 - binding_tape_width/2 - verticalWallThickness*2; // TO CHECK
 
 if (show=="preview"){
     render();
@@ -50,8 +51,8 @@ module render(){
     color("#222222")
     handlebar();
 
-    color("#888888")
-    flashlight(_flashlightDiameter);
+    // color("#888888")
+    // flashlight(_flashlightDiameter);
 }
 
 module printable(){
