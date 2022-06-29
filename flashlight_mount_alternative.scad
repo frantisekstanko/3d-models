@@ -13,18 +13,18 @@ flashlightLength   = 125; // mm
 // desired properties
 
 // front light
-// flashlight_rotation           =  0;
-// X_mountLength                 = 20;
-// flashlightMountPadding        =  0;
-// topOffsetFromFlashlightCenter =  0;
-// Z_flashlightPosition          = 38;
+flashlight_rotation           =  0;
+X_mountLength                 = 20;
+flashlightMountPadding        =  0;
+topOffsetFromFlashlightCenter =  0;
+Z_flashlightPosition          = 38;
 
 // rear light
-flashlight_rotation           = 14;
-X_mountLength                 = 32;
-flashlightMountPadding        = 10;
-topOffsetFromFlashlightCenter =  8;
-Z_flashlightPosition          = 35;
+// flashlight_rotation           = 14;
+// X_mountLength                 = 32;
+// flashlightMountPadding        = 10;
+// topOffsetFromFlashlightCenter =  8;
+// Z_flashlightPosition          = 35;
 
 horizontalWallThickness           =   2; // mm ;
 verticalWallThickness             =   1; // mm ;
