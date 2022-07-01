@@ -15,8 +15,8 @@ flashlight_rotation           =  0;
 X_mountLength                 = 20;
 flashlightMountPadding        =  0;
 topOffsetFromFlashlightCenter =  0;
-mountDiameter                 = 32;
-flashlightDiameter            = 25;
+mountDiameter                 = 32; // some real life values: 32, 35
+flashlightDiameter            = 26; // some real life values: 26 (convoy S21A)
 
 // rear light
 // flashlight_rotation           = 14;
@@ -27,12 +27,12 @@ flashlightDiameter            = 25;
 // flashlightDiameter            =  25;
 
 Z_flashlightPosition              = 38;
-horizontalWallThickness           =  2; // mm ;
-verticalWallThickness             =  1; // mm ;
+horizontalWallThickness           =  3; // mm ;
+verticalWallThickness             =  2; // mm ;
 binding_tape_width                =  5; // mm
 binding_tape_thickness            =  2;
 binding_tape_rotation_corr        =  flashlight_rotation/4;
-bottomOffsetFromHandlerbarsCenter =  5;
+bottomOffsetFromHandlerbarsCenter =  7;
 
 
 //////////////////////////////////////////////////////////
