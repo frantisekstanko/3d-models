@@ -6,8 +6,6 @@ show      = "print"; // [ "preview" | "print" ]
 
 // measured values
 gasketThickness    =   4; // mm
-mountDiameter      =  32; // mm
-flashlightDiameter =  25; // mm
 flashlightLength   = 125; // mm
 
 // desired properties
@@ -17,12 +15,16 @@ flashlight_rotation           =  0;
 X_mountLength                 = 20;
 flashlightMountPadding        =  0;
 topOffsetFromFlashlightCenter =  0;
+mountDiameter                 = 32;
+flashlightDiameter            = 25;
 
 // rear light
 // flashlight_rotation           = 14;
 // X_mountLength                 = 32;
 // flashlightMountPadding        = 10;
 // topOffsetFromFlashlightCenter =  8;
+// mountDiameter                 =  32;
+// flashlightDiameter            =  25;
 
 Z_flashlightPosition              = 38;
 horizontalWallThickness           =  2; // mm ;
